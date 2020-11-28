@@ -1,0 +1,1 @@
+It works...... To use it on expo, install expo on your android or iOS device and then delete the node modules and yarn.lock file. When you open it on your device, install all the dependencies using npm/yarn/expo install. You need to install expo in order to run it.
