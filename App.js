@@ -83,8 +83,6 @@ export default function App() {
   React.useEffect(() => {
     const fetchData = async () => {
       const movies = await getMovies();
-      // Add empty items to create fake space
-      // [empty_item, ...movies, empty_item]
       setMovies([{ key: 'empty-left' }, ...movies, { key: 'empty-right' }]);
     };
 
