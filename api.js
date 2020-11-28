@@ -1,4 +1,5 @@
-import { API_KEY } from './config';
+const API_KEY = '7ccbb13edbf7b771e919a3ee0ec36948';
+
 const genres = {
   12: 'Adventure',
   14: 'Fantasy',
