@@ -8,12 +8,10 @@ import {
   Image,
   Dimensions,
   Animated,
-  TouchableOpacity,
   Platform,
 } from 'react-native';
 const { width, height } = Dimensions.get('window');
 import { getMovies } from './api';
-import Genres from './Genres';
 import Rating from './Rating';
 import { LinearGradient } from 'expo-linear-gradient';
 
@@ -22,9 +20,9 @@ const ITEM_SIZE = Platform.OS === 'ios' ? width * 0.72 : width * 0.74;
 const EMPTY_ITEM_SIZE = (width - ITEM_SIZE) / 2;
 const BACKDROP_HEIGHT = height * 0.65;
 
-const Loading = () => (
+const Initial = () => (
   <View style={styles.loadingContainer}>
-    <Text style={styles.paragraph}>Loading...</Text>
+    <Text style={styles.paragraph}>initial page</Text>
   </View>
 );
 
@@ -96,7 +94,7 @@ export default function App() {
   }, [movies]);
 
   if (movies.length === 0) {
-    return <Loading />;
+    return <Initial />;
   }
 
   return (
@@ -156,7 +154,6 @@ export default function App() {
                   {item.title}
                 </Text>
                 <Rating rating={item.rating} />
-                <Genres genres={item.genres} />
                 <Text style={{ fontSize: 12 }} numberOfLines={4}>
                   {item.description}
                 </Text>
