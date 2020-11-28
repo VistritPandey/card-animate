@@ -1,4 +1,4 @@
-const API_KEY = '7ccbb13edbf7b771e919a3ee0ec36948';
+const API_KEY = "7ccbb13edbf7b771e919a3ee0ec36948";
 
 const API_URL = `https://api.themoviedb.org/3/discover/movie?api_key=${API_KEY}&sort_by=popularity.desc`;
 const getImagePath = (path) =>
@@ -6,9 +6,9 @@ const getImagePath = (path) =>
 const getBackdropPath = (path) =>
   `https://image.tmdb.org/t/p/w370_and_h556_multi_faces${path}`;
 
-export const getMovies = async () => {
+export const getData = async () => {
   const { results } = await fetch(API_URL).then((x) => x.json());
-  const movies = results.map(
+  const pullData = results.map(
     ({
       id,
       original_title,
@@ -26,5 +26,5 @@ export const getMovies = async () => {
     })
   );
 
-  return movies;
+  return pullData;
 };
