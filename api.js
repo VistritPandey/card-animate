@@ -38,8 +38,6 @@ export const getMovies = async () => {
       backdrop_path,
       vote_average,
       overview,
-      release_date,
-      genre_ids,
     }) => ({
       key: String(id),
       title: original_title,
@@ -47,8 +45,6 @@ export const getMovies = async () => {
       backdrop: getBackdropPath(backdrop_path),
       rating: vote_average,
       description: overview,
-      releaseDate: release_date,
-      genres: genre_ids.map((genre) => genres[genre]),
     })
   );
 
